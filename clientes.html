@@ -36,9 +36,8 @@
                     <thead class="bg-sky-950 text-white">
                         <tr>
                             <th class="text-left p-3">Nome</th>
-                            <th class="text-left p-3">Preço</th>
-                            <th class="text-left p-3">Quantidade</th>
-                            <th class="p-3">Total</th>
+                            <th class="text-left p-3">CPF</th>
+                            <th class="text-left p-3">E-mail</th>
                             <th class="p-3">Ações</th>
                         </tr>
                     </thead>
@@ -47,20 +46,33 @@
             </div>
         </section>
         </main>
+        
         <div id="modal" class="hidden fixed w-full top-0 bottom-0 bg-[#00000070] justify-center items-center">
             <div class="flex flex-col gap-2 max-w-fit px-3 py-5 bg-white rounded-md justify-center items-center">
-                <h2 class="uppercase text-lg font-semibold">Novo Produto</h2>
+                <h2 class="uppercase text-lg font-semibold">Novo cliente</h2>
                 <form id="form" class="flex flex-col gap-3">
-                    <input class="w-72 px-3 py-2 outline-none border border-black rounded-md" type="text" id="productName" placeholder="Nome do Produto">
-                    <input class="w-72 px-3 py-2 outline-none border border-black rounded-md" type="number" id="productValue" placeholder="Valor do Produto">
-                    <input class="w-72 px-3 py-2 outline-none border border-black rounded-md" type="number" id="productQuantity" placeholder="Quantidade do Produto">
-                    <span id="errorMessage" class="hidden text-center text-red-700 text-sm">Todos os campos são obrigatórios</span>
-                    <button class="w-full py-3 px-4 rounded-md bg-sky-900 text-white text-lg hover:bg-sky-800 uppercase" id="send">Enviar</button>
-                    <button class="w-full py-3 px-4 rounded-md bg-yellow-400 text-sky-900 text-lg font-semibold hover:bg-yellow-300 uppercase" id="cancel">Cancelar</button>
+                    <input id="nomeCliente"
+                       class="w-72 px-3 py-2 outline-none border border-black rounded-md" 
+                       type="text" placeholder="Nome do cliente">
+                    <input id="cpf"
+                       class="w-72 px-3 py-2 outline-none border border-black rounded-md" 
+                       type="text" placeholder="CPF">
+                    <input id="email"
+                       class="w-72 px-3 py-2 outline-none border border-black rounded-md" 
+                       type="email" placeholder="e-mail">
+                    <span id="errorMessage" 
+                       class="hidden text-center text-red-700 text-sm"
+                       >Todos os campos são obrigatórios</span>
+                    <button 
+                       class="w-full py-3 px-4 rounded-md bg-sky-900 text-white text-lg hover:bg-sky-800 uppercase" 
+                       id="send">Enviar</button>
+                    <button id="cancel"
+                       class="w-full py-3 px-4 rounded-md bg-yellow-400 text-sky-900 text-lg font-semibold hover:bg-yellow-300 uppercase" 
+                       >Cancelar</button>
                 </form>
             </div>
         </div>
-    <script src="/assets/js/index.js"></script>
+    <script src="/assets/js/clientes.js"></script>
 </body>
 
 </html>

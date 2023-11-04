@@ -1,35 +1,19 @@
 const tableData = document.getElementById('tableContent');
 const btnAddProduct = document.getElementById('addProduct');
 const modal = document.getElementById('modal');
+const btnSend = document.getElementById('send');
+const btnCancel = document.getElementById('cancel');
 const productName = document.getElementById('productName');
 const productValue = document.getElementById('productValue');
 const productQuantity = document.getElementById('productQuantity');
-const btnSend = document.getElementById('send');
-const btnCancel = document.getElementById('cancel');
 const form = document.getElementById('form');
 const erroMessage = document.getElementById('errorMessage')
 
 const products = [
-{
-    nome: 'Iphone 12 128gb',
-    preco: 2999.00,
-    quantidade: 1,
-},
-{
-    nome: 'Samsung s20 black',
-    preco: 2756.00,
-    quantidade: 1,
-},
-{
-    nome: 'USB 3.0 Cable',
-    preco: 20.00,
-    quantidade: 3,
-},
-{
-    nome: 'Smartwatch 9.0',
-    preco: 299.00,
-    quantidade: 6,
-},
+ {nome: 'Iphone 12 128gb', preco: 2999.00, quantidade: 1},
+ {nome: 'Samsung s20 black', preco: 2756.00, quantidade: 1},
+ {nome: 'USB 3.0 Cable', preco: 20.00, quantidade: 3},
+ {nome: 'Smartwatch 9.0', preco: 299.00, quantidade: 6},
 ];
 
 function formatDataToString(value) {
@@ -87,7 +71,7 @@ function openModal() {
 function closeModal() {
     modal.classList.remove('flex');
     modal.classList.add('hidden');
-    hiddenErroMessage();
+    hiddenErroMessage();  // apagar a msg de erro //
     form.reset();
 }
 
@@ -107,8 +91,7 @@ function addProduct() {
     quantidade: productQuantity.value,
   });
   
-  closeModal();
-  /* productName.value = ''; productValue.value = ''; productQuantity.value = '';  -> outra forma de resetar*/
+  closeModal(); /* productName.value = ''; productValue.value = ''; productQuantity.value = '';  -> outra forma de resetar*/
 }
 else { 
      showErroMessage();
@@ -116,10 +99,11 @@ else {
 }
 
 renderDataTable();
+
 btnAddProduct.addEventListener('click', openModal);
 
-btnSend.addEventListener('click', (e) => {
-    e.preventDefault();
+btnSend.addEventListener('click', (e) => { // e -> significa evento //
+    e.preventDefault();  // para o botão ter sua função original //
     addProduct();
     renderDataTable()  
 });
